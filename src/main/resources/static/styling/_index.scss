@@ -1,0 +1,40 @@
+#newNote {
+  //width: 100%;
+  height: 20rem;
+  border: 1px solid $color-black;
+  padding: 10px;
+  font-size: 1rem;
+  overflow-y: auto;
+  margin-bottom: 0.5rem;
+}
+
+.mention-suggestions {
+  position: absolute;
+  background: white;
+  border: 1px solid $color-grey;
+  display: none;
+  z-index: 10;
+
+  div {
+    padding: 8px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary-faint;
+    }
+  }
+}
+
+#submitNewNote {
+  display: flex;
+  flex-direction: column;
+}
+
+#btn-submit-new-note {
+  align-self: flex-end;
+}
+
+.mention {
+  color: $color-primary;
+  font-weight: bold;
+}

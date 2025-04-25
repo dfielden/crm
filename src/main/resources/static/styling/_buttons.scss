@@ -1,0 +1,13 @@
+.btn {
+  padding: 0.5rem;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+
+  &-primary {
+    background-image: $gradient-primary;
+  }
+}

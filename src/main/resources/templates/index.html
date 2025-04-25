@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=0"/>
+    <link rel="stylesheet" href="styling/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <title>CRM</title>
+</head>
+
+<body>
+    <div>
+        <div id="navbar">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/contacts">Contacts</a></li>
+                    <li><a href="/groups">Groups</a></li>
+                    <li><a href="/calendar">Calendar</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>CRM App</h1>
+        <div class="main-body">
+            <div class="main-left">
+                <h2>Enter new note:</h2>
+                <form id="submitNewNote">
+                    <div id="newNote" class="newNote" contenteditable="true" spellcheck="false"></div>
+                    <div id="mentionSuggestions" class="mention-suggestions"></div>
+                    <button class="btn btn-primary" id="btn-submit-new-note">Submit</button>
+                </form>
+            </div>
+            <div class="main-right">
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/javascript/index/index.js"></script>
+</body>
+
+</html>
