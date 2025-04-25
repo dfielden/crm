@@ -26,6 +26,7 @@ export const AJAX = async function(url, uploadData = undefined) {
 
         const res = await Promise.race([fetchPromise, timeout(ajaxTimeoutMillis)]); // two promises will race - timeout returns reject after time argument - i.e. we can add a timeout for load failure
         const data = await res.json();
+        console.log("data: " + data);
 
         if(!res.ok) throw new Error(`${data.message} (${res.status})`);
         return data;

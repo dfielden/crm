@@ -1,5 +1,6 @@
 package com.danfielden.crm;
 
+import com.google.gson.Gson;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 @SpringBootApplication
 @Controller
 public class CrmApp {
+    private final CrmAppDB db;
+    private static final Gson gson = new Gson();
+
+
+    public CrmApp() throws Exception {
+        db = new CrmAppDB();
+    }
 
 
     public static void main(String[] args) {
@@ -43,10 +51,22 @@ public class CrmApp {
     }
 
     @ResponseBody
+    @GetMapping("/getnotes")
+    public String getNotes(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+        String result = gson.toJson(db.getNotes(1));
+        return result;
+    }
+
+    @ResponseBody
     @PostMapping("/submitnewnote")
     public String submitNewNote(@RequestBody String note, HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        System.out.println("Submitted new note");
-        return "";
+        System.out.println(note);
+        try {
+            db.addNewNote(1, System.currentTimeMillis(), note);
+        } catch (Exception e) {
+            return gson.toJson(e.getMessage());
+        }
+        return gson.toJson("Received message");
     }
 
     private void setHeaders(HttpServletResponse resp) {

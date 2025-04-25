@@ -3,7 +3,29 @@ import {AJAX} from "../helper.js";
 // TODO: get user info from DB
 const users = ["alice", "bob", "charlie", "diana", "eve", "worm"];
 const newNote = document.querySelector("#newNote");
+const recentNotes = document.querySelector("#recentNotes");
 const suggestions = document.querySelector("#mentionSuggestions");
+
+window.addEventListener('load', e => {
+    const data = getNotes();
+})
+
+const getNotes = async function() {
+    try {
+        const data = await AJAX("/getnotes");
+        for (const key in data) {
+            const id = key;
+            const note = JSON.parse(data[key]);
+            recentNotes.append(note);
+        }
+        if(!isEmptyObject(data)) {
+            console.log("no data")
+        }
+
+    } catch (err) {
+        console.error('Unable to load notes. Please try again.');
+    }
+}
 
 
 newNote.addEventListener("keyup", (e) => {
@@ -109,6 +131,8 @@ newNote.addEventListener("input", () => {
     setCaretPosition(newNote, caretOffset);
 });
 
-document.querySelector('#btn-submit-new-note').addEventListener('click', (e) => {
-    AJAX('/submitnewnote', ' ')
+document.querySelector('#btn-submit-new-note').addEventListener('click', async (e) => {
+    const textContent = newNote.textContent;
+    const result = await AJAX('/submitnewnote', textContent);
+    console.log("result: " + result);
 })
