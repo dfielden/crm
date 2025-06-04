@@ -21,64 +21,70 @@
         <div class="main-body">
             <div class="main-left">
                 <ul class="list-alphabet">
-                    <li class="list-alphabet-header">A</li>
-                    <li class="list-alphabet-header">B</li>
-                    <li class="list-alphabet-item">
-                        <!-- fa is compiled into "<svg class='vg-inline--fa fa-a'>"                     -->
-                        <i class="fa-solid fa-b"></i>
-                        <h3>Daniel Benson</h3>
-                    </li>
-                    <li class="list-alphabet-header">C</li>
-                    <li class="list-alphabet-item">
-                        <div class="img-circle-container">
-                            <img class="profile-img" src="images/danny.jpg">
-                        </div>
-                        <h3>Sandra Chote</h3>
-                    </li>
-                    <li class="list-alphabet-item">
-                        <!-- fa is compiled into "<svg class='vg-inline--fa fa-a'>"                     -->
-                        <i class="fa-solid fa-c"></i>
-                        <h3>Thomas Creasy</h3>
-                    </li>
-                    <li class="list-alphabet-header">Z</li>
-
-
                 </ul>
-
             </div>
+
             <div class="main-right">
                 <div class="personal-info">
-                    <div class="personal-info-header-row">
-                        <div class="personal-info-header">Sandra Chote</div>
-                        <div class="img-square-container">
-                            <img class="display-img" src="images/danny.jpg">
+                    <form id='contactForm' action="">
+                        <div class="personal-info-header-row">
+                            <div class="personal-info-header"></div>
+                            <div class="img-square-container" id="imgSquareContainer">
+                                <img class="display-img" id="displayImg">
+                            </div>
                         </div>
-                    </div>
-                    <div class="personal-info-tab">
-                        <div class="tab-header">Surname</div>
-                        <div class="tab-info">Chote</div>
-                    </div>
-                    <div class="personal-info-tab">
-                        <div class="tab-header">First name</div>
-                        <div class="tab-info">Sandra</div>
-                    </div>
-                    <div class="personal-info-tab">
-                        <div class="tab-header">Middle name(s)</div>
-                        <div class="tab-info"></div>
-                    </div>
-                    <div class="personal-info-tab">
-                        <div class="tab-header">Title</div>
-                        <div class="tab-info">Miss</div>
-                    </div>
-                    <div class="personal-info-tab">
-                        <div class="tab-header">Birthday</div>
-                        <div class="tab-info">16th September</div>
-                    </div>
+                        <div class="personal-info-tab">
+                            <label class="tab-header" for="firstName">First name</label>
+                            <input type="text" required autocomplete="off" class="form-input" name="firstName" id="firstName">
+                        </div>
+                        <div class="personal-info-tab">
+                            <label class="tab-header" for="middleNames">Middle name(s)</label>
+                            <input type="text" autocomplete="off" class="form-input" name="middleNames" id="middleNames">
+                        </div>
+                        <div class="personal-info-tab">
+                            <label class="tab-header" for="surname">Surname</label>
+                            <input type="text" required autocomplete="off" class="form-input" name="surname" id="surname">
+                        </div>
+                        <div class="personal-info-tab">
+                            <label class="tab-header" for="title">Title</label>
+                            <input type="text" autocomplete="off" class="form-input" name="title" id="title">
+                        </div>
+                        <div class="personal-info-tab">
+                            <div class="tab-header">Birthday</div>
+                            <div id="dateContainer">
+                                <div class="month-input-container">
+                                    <input type="number" min="1" max="31" autocomplete="off" class="form-input" name="day" id="day" value="" onchange="this.value = this.value.padStart(2, '0')">
+                                    <label class="tab-header" for="day">Day</label>
+                                </div>
+                                <div class="month-input-container">
+                                    <input type="number" min="1" max="12" autocomplete="off" class="form-input" name="month" id="month" value="" onchange="this.value = this.value.padStart(2, '0')">
+                                    <label class="tab-header" for="month">Month</label>
+                                </div>
+                                <div class="month-input-container">
+                                    <input type="number" min="1901" max="2100" autocomplete="off" class="form-input" name="year" id="year">
+                                    <label class="tab-header" for="year">Year</label>
+                                </div>
+                                <input type="hidden" id="contactId" name="contactId"/>
+                            </div>
+                        </div>
+                        <div class="personal-info-tab">
+                            <label class="tab-header" for="imageUpload">Image</label>
+                            <input type="file" autocomplete="off" class="form-input" name="imageUpload" id="imageUpload" accept=".jpg, .jpeg, image/jpeg">
+                        </div>
+                        <button class="btn btn-primary" id="btnSubmitNewContact">Submit</button>
+                        <button class="btn btn-primary" id="btnUpdateContact">Update</button>
+                        <div class="link-text" id="newContact">Create new contact</div>
+
+
+                    </form>
+
                 </div>
 
             </div>
         </div>
     </div>
+
+    <script type="module" src="/javascript/contacts/contacts.js"></script>
 
 </body>
 </html>

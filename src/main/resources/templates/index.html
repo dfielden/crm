@@ -11,7 +11,7 @@
         <div id="navbar">
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a class="nav-active" href="#">Home</a></li>
                     <li><a href="/contacts">Contacts</a></li>
                     <li><a href="/groups">Groups</a></li>
                     <li><a href="/calendar">Calendar</a></li>
@@ -23,13 +23,17 @@
             <div class="main-left">
                 <h2>Enter new note:</h2>
                 <form id="submitNewNote">
-                    <div id="newNote" class="newNote" contenteditable="true" spellcheck="false"></div>
+                    <div id="newNote" class="new-note" contenteditable="true" spellcheck="false"></div>
                     <div id="mentionSuggestions" class="mention-suggestions"></div>
-                    <button class="btn btn-primary" id="btn-submit-new-note">Submit</button>
+                    <button class="btn btn-primary" id="btnSubmitNewNote">Submit</button>
                 </form>
 
                 <h2>Recent notes</h2>
-                <div id="recentNotes">
+                <div id="recentNotes" class="recent-notes">
+                    <div id="recentNotesContainer">
+
+                    </div>
+                    <button class="btn btn-primary" id="btnViewNotes">View all Notes</button>
 
                 </div>
             </div>

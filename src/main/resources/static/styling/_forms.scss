@@ -1,0 +1,39 @@
+.form-input {
+  font-size: 1rem;
+  font: $font-primary;
+  padding: 0.5rem 0.4rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+  //background-color: $color-off-white;
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  align-self: center;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, .1);
+    border-bottom: 3px solid $color-secondary;
+    //background-color: $color-off-white;
+  }
+}
+
+select {
+  font-size: 1rem;
+  font: $font-primary;
+  padding: 0.5rem 0.4rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+  //background-color: $color-off-white;
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  align-self: center;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, .1);
+    border-bottom: 3px solid $color-secondary;
+    //background-color: $color-off-white;
+  }
+}

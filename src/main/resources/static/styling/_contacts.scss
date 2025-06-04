@@ -24,7 +24,7 @@
       color: $color-grey;
       height: 2rem;
       width: 2rem;
-      border: 1px solid $color-grey-dark;
+      //border: 1px solid $color-grey-dark;
 
     }
 
@@ -59,10 +59,18 @@
   }
 
   .img-square-container {
+    display: flex;
     width: 10rem;
     height: 10rem;
     border: 1px solid $color-grey-dark;
     margin-right: 0.6rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      padding: 0.5rem;
+      color: $color-grey;
+    }
   }
 
   .display-img {
@@ -84,6 +92,8 @@
   background-color: white;
   padding: 0.5rem;
   margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
 
   .tab-header {
     font-style: $font-display;
@@ -97,3 +107,50 @@
 
 }
 
+.time-posted {
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+#dateContainer {
+  display: flex
+}
+
+.month-input-container {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  padding: 1rem;
+
+  label {
+    font-weight: normal !important;
+    font-size: 0.8rem;
+  }
+}
+
+.link-text {
+  color: $color-primary;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#btnSubmitNewContact {
+  align-self: end;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+#btnUpdateContact {
+  align-self: end;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+#newContact {
+  align-self: center;
+}

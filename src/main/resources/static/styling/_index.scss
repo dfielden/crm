@@ -14,6 +14,7 @@
   border: 1px solid $color-grey;
   display: none;
   z-index: 10;
+  white-space: pre; /* preserves spaces */
 
   div {
     padding: 8px;
@@ -30,11 +31,44 @@
   flex-direction: column;
 }
 
-#btn-submit-new-note {
+#btnSubmitNewNote {
   align-self: flex-end;
 }
 
 .mention {
   color: $color-primary;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.recent-notes {
+  padding: 2rem;
+  background-color: $color-grey-lightest;
+  display: flex;
+  flex-direction: column;
+}
+
+#recentNotesContainer {
+  margin-bottom: 0.5rem;
+}
+
+.recent-notes-tab {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 0.5rem;
+  margin: 0.5rem;
+
+  .fa-trash {
+    align-self: end;
+    cursor: pointer;
+  }
+}
+
+.note-content {
+
+}
+
+#btnViewNotes {
+  align-self: flex-end;
 }

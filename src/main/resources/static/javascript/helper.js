@@ -67,4 +67,15 @@ export const validateSetFormInputs = (reps, weight) => {
     return (isInt(parseInt(reps)) && !isFloat(parseFloat(reps)) && (isInt(parseInt(weight)) || isFloat(parseFloat(weight))));
 }
 
+export const formatTimeMillis = (timeMillis) => {
+    const date = new Date(parseInt(timeMillis));
+    return date.toLocaleString('en-GB', {
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: false
+    }).replace(' at', '');
+}
+
 
